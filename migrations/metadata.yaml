@@ -1,0 +1,67 @@
+actions:
+- definition:
+    arguments:
+    - description: null
+      name: name
+      type: String!
+    - description: null
+      name: email
+      type: String!
+    kind: synchronous
+    output_type: User
+    webhook: http://host.docker.internal:4000/createUser
+  permissions: []
+  name: createUser
+- definition:
+    arguments:
+    - description: null
+      name: name
+      type: String!
+    - description: null
+      name: email
+      type: String!
+    kind: asynchronous
+    output_type: User
+    webhook: http://host.docker.internal:4000/createUserSlow
+  permissions: []
+  name: createUserSlow
+allowlist: []
+custom_types:
+  enums: []
+  input_objects: []
+  objects:
+  - description: null
+    fields:
+    - arguments: null
+      description: null
+      name: userId
+      type: Int!
+    name: User
+    relationships:
+    - field_mapping:
+        userId: id
+      name: user
+      remote_table: users
+  scalars: []
+functions: []
+query_collections: []
+remote_schemas: []
+tables:
+- array_relationships: []
+  configuration:
+    custom_column_names: {}
+    custom_root_fields:
+      delete: null
+      insert: null
+      select: null
+      select_aggregate: null
+      select_by_pk: null
+      update: null
+  delete_permissions: []
+  event_triggers: []
+  insert_permissions: []
+  is_enum: false
+  object_relationships: []
+  select_permissions: []
+  table: users
+  update_permissions: []

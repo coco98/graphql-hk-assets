@@ -1,0 +1,6 @@
+action:
+  framework: nodejs-express
+  handler_directory: service/src
+  routes_path: service/src/routes.js
+  webhook: http://host.docker.internal:4000
+endpoint: http://localhost:8080
