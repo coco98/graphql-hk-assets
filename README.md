@@ -1,7 +1,7 @@
 # graphql-hk-assets
 
 - Run Hasura + Postgres (use image tags from docker-compose.yaml)
-- Build the nodejs docker image (`cd nodejs-actions-service && docker build -t nodejs-actions-service .`)
+- Build the nodejs docker image (`cd nodejs-actions-service && docker build -t nodejs-actions-service .`) with env var `HASURA_URL` set to the Hasura GraphQL (eg: `http://localhost:8080/v1/graphql`) endpoint.
 
 - Upload migrations + metadata from the `init/` folder
     - Run `init/create-table.sql` in the SQL window
